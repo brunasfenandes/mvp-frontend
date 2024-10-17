@@ -1,0 +1,19 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './typography' as *;
+
+html {
+  box-sizing: border-box;
+  min-width: 20rem;
+}
+ 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
