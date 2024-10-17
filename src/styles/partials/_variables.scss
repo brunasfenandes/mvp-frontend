@@ -1,14 +1,18 @@
-$mobile-breakpoint: 320px; 
+$mobile-breakpoint: 320px;
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
-$font-stack: 'BellSlim';
+$font-stack: "BellSlim";
 
 $Bell-Light-Grey: #f4f4f4;
 $Bell-Blue: #007aff;
 $Bell-DarkBlue: #00549a;
-$White: #FFFFFF;
-$TeaGreen: #D0FFCE;
-$Melon: #F0A7A0;
-$Naples: #F4D35E;
-$Ash-Gray: #96BBBB;
+$White: #ffffff;
+$TeaGreen: #d0ffce;
+$Melon: #f0a7a0;
+$Naples: #f4d35e;
+$Ash-Gray: #96bbbb;
+
+$padding-mobile: 1rem;
+$padding-tablet: 1.7rem;
+$padding-desktop: 1.7rem;

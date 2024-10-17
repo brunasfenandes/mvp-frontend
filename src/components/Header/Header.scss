@@ -1,0 +1,28 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $padding-mobile;
+  padding: $padding-mobile;
+  justify-content: space-between;
+  background-color: $Bell-DarkBlue;
+
+  @include tablet {
+    flex-direction: row;
+    gap: $padding-tablet;
+    padding: $padding-tablet;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    gap: $padding-desktop;
+    padding: $padding-desktop;
+  }
+
+  &__logo {
+    height: 40px;
+  }
+}
