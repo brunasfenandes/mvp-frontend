@@ -1,15 +1,16 @@
 import "./App.scss";
-import { Header } from "./components/Header/Header";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import RoomPage from "./pages/RoomPage/RoomPage";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Routes></Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/rooms" element={<RoomPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
