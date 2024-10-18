@@ -15,7 +15,6 @@ function InputFooter({ postFunction }) {
         name: nameInput,
         comment: commentInput,
       });
-      console.log(response);
       event.target.reset();
     }
   }
