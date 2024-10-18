@@ -11,12 +11,17 @@ function RoomPage() {
   const [roomChats, setRoomChats] = useState([]);
   const { id } = useParams();
 
-  useEffect(() => {
-    const fetchChat = async () => {
-      const chats = await axios.get(`http://localhost:8080/room/${id}/chat`);
-      setRoomChats(chats.data);
-    };
+  const fetchChat = async () => {
+    const chats = await axios.get(`http://localhost:8080/room/${id}/chat`);
+    setRoomChats(chats.data);
+  };
 
+  const handleDelete = async (chatId) => {
+    await axios.delete(`http://localhost:8080/room/${id}/chat/${chatId}`);
+    fetchChat();
+  };
+
+  useEffect(() => {
     fetchChat();
   }, []);
 
@@ -31,7 +36,7 @@ function RoomPage() {
       <InputFooter />{" "}
       <section className="chats">
         {roomChats?.map((chat) => (
-          <CommentPost chat={chat} />
+          <CommentPost chat={chat} handleDelete={handleDelete} />
         ))}
       </section>
     </div>
