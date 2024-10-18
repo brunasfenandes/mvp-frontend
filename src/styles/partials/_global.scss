@@ -23,3 +23,17 @@ a {
 body {
   margin: 0;
 }
+
+.no-mobile {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
+.no-tablet {
+  display: block;
+  @include tablet {
+    display: none;
+  }
+}

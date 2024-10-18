@@ -1,4 +1,4 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin mobile {
   @media (min-width: $mobile-breakpoint) and (max-width: 767px) {
@@ -17,3 +17,15 @@
     @content;
   }
 }
+
+//keerat's -do not delete
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+//
