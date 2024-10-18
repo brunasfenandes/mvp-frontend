@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 function InputFooter({ postFunction }) {
   async function handleSubmit(event) {
     event.preventDefault();
-    const commentInput = event.target.commentTextArea.value;
+    const commentInput = event.target.commentText.value;
     const nameInput = event.target.name.value;
     if (commentInput.trim() === "" || nameInput.trim() === "") {
       toast.error("Please enter the comment and name");
@@ -28,7 +28,7 @@ function InputFooter({ postFunction }) {
           <div className="input-button-box">
             <div className="comments__comment">
               <input type="text" className="input comments__name-input" name="name" id="name" placeholder="Add a name" />
-              <input type="text" className="comments__input comments__input__text" name="commentOther" id="commentInput" placeholder="Add a new comment" />
+              <input type="text" className="comments__input comments__input__text" name="commentText" id="commentInput" placeholder="Add a new comment" />
             </div>
             <button type="submit" className="comments__button button">
               <img src={commentIcon} alt="upload icon, interact to upload." className="comments__button-img" />
