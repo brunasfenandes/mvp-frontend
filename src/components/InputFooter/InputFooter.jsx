@@ -1,14 +1,15 @@
 import "./InputFooter.scss";
 import avatarImg from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/icons/add_comment.svg";
+import { toast } from "react-toastify";
 
 function InputFooter({ postFunction }) {
   async function handleSubmit(event) {
     event.preventDefault();
-    const commentInput = event.target.commentTextArea.value;
+    const commentInput = event.target.commentText.value;
     const nameInput = event.target.name.value;
     if (commentInput.trim() === "" || nameInput.trim() === "") {
-      alert("Please enter the comment and name!");
+      toast.error("Please enter the comment and name");
     } else {
       const response = await postFunction({
         name: nameInput,
@@ -51,11 +52,14 @@ function InputFooter({ postFunction }) {
                 <span className="comments__button-text">COMMENT</span>
               </button>
             </div>
-          </form>
-        </div>
+            <button type="submit" className="comments__button button">
+              <img src={commentIcon} alt="upload icon, interact to upload." className="comments__button-img" />
+              <span className="comments__button-text">COMMENT</span>
+            </button>
+          </div>
+        </form>
       </div>
-    </div>
-  );
+    </div>;
 }
 
 export default InputFooter;

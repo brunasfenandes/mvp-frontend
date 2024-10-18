@@ -47,7 +47,7 @@ function RoomPage() {
   }, [scrollTrigger]);
 
   return (
-    <div>
+    <div className="room-page">
       <div className="title">
         <Link to="/">
           <FaArrowLeft />
@@ -64,7 +64,7 @@ function RoomPage() {
           />
         ))}
       </section>
-      <InputFooter postFunction={postChat} />{" "}
+      <InputFooter postFunction={postChat} />
     </div>
   );
 }

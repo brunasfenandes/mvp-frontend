@@ -1,4 +1,4 @@
-@import "../../styles/partials/mixins";
+@use "../../styles/partials/mixins" as *;
 
 .chats {
   padding: 1rem;
@@ -23,12 +23,11 @@
     }
   }
 }
-
-.title {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
 
   a {
     width: auto;
