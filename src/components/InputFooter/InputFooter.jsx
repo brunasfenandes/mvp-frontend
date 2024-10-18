@@ -18,6 +18,7 @@ function InputFooter({ postFunction }) {
       event.target.reset();
     }
   }
+
   return (
     <div className="input-footer">
       <div className="input-footer__container">
@@ -34,14 +35,13 @@ function InputFooter({ postFunction }) {
                   name="name"
                   id="name"
                   placeholder="Add a name"
-                ></input>
+                />
                 <textarea
-                  type="text"
                   className="comments__input input"
                   id="commentTextArea"
                   name="comment"
                   placeholder="Add a new comment"
-                ></textarea>
+                />
               </div>
               <button type="submit" className="comments__button button">
                 <img
@@ -52,14 +52,11 @@ function InputFooter({ postFunction }) {
                 <span className="comments__button-text">COMMENT</span>
               </button>
             </div>
-            <button type="submit" className="comments__button button">
-              <img src={commentIcon} alt="upload icon, interact to upload." className="comments__button-img" />
-              <span className="comments__button-text">COMMENT</span>
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>;
+    </div>
+  );
 }
 
 export default InputFooter;
