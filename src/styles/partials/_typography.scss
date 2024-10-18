@@ -1,5 +1,35 @@
-@import url(https://db.onlinewebfonts.com/c/4ceca79a1fab20307b0dbfb5a88a1e70?family=BellSlim);
+@font-face {
+  font-family: "BellSlim";
+  src: url("https://db.onlinewebfonts.com/t/4ceca79a1fab20307b0dbfb5a88a1e70.eot");
+  src: url("https://db.onlinewebfonts.com/t/4ceca79a1fab20307b0dbfb5a88a1e70.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/4ceca79a1fab20307b0dbfb5a88a1e70.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/4ceca79a1fab20307b0dbfb5a88a1e70.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/4ceca79a1fab20307b0dbfb5a88a1e70.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/4ceca79a1fab20307b0dbfb5a88a1e70.svg#BellSlim")format("svg");
+}
+
+@font-face {
+  font-family: "BellSlim SemiBold";
+  src: url("https://db.onlinewebfonts.com/t/7bac58a98ae59697e9591893eb81b637.eot");
+  src: url("https://db.onlinewebfonts.com/t/7bac58a98ae59697e9591893eb81b637.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/7bac58a98ae59697e9591893eb81b637.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/7bac58a98ae59697e9591893eb81b637.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/7bac58a98ae59697e9591893eb81b637.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/7bac58a98ae59697e9591893eb81b637.svg#BellSlim SemiBold")format("svg");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "BellSlim Bold";
+  src: url("https://db.onlinewebfonts.com/t/47a246adcf764a7223c8872d5fafaf74.eot");
+  src: url("https://db.onlinewebfonts.com/t/47a246adcf764a7223c8872d5fafaf74.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/47a246adcf764a7223c8872d5fafaf74.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/47a246adcf764a7223c8872d5fafaf74.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/47a246adcf764a7223c8872d5fafaf74.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/47a246adcf764a7223c8872d5fafaf74.svg#BellSlim Bold")format("svg");
+  font-weight: 700;
+}
 
 body {
-  font-family: 'BellSlim,', sans-serif;
+  font-family: "BellSlim", sans-serif;
 }
