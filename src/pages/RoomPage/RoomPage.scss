@@ -1,5 +1,27 @@
+@import "../../styles/partials/mixins";
+
 .chats {
   padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  align-items: initial;
+  display: flex;
+
+  > div {
+    width: 90%;
+
+    @include desktop {
+      width: 80%;
+    }
+
+    @include tablet {
+      width: 80%;
+    }
+  }
 }
 
 .title {
