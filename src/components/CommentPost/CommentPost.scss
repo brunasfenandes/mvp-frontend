@@ -1,0 +1,54 @@
+@import "../../styles/partials/mixins" ;
+
+.comment-post{
+    display: flex;
+    gap:4rem;
+    padding: 1rem 1rem;
+    background-color: rgb(154, 219, 254);
+    border: 1px solid rgb(97, 166, 245);
+    border-radius: 8px;
+    margin-bottom: 2rem; 
+    &__avatar{
+        width:2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        background-color: purple;
+        margin-top: 0.8rem;
+    }
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__actions{
+        display: flex;
+        gap:2rem;
+        margin-right: 2rem;
+    }
+    &__delete{
+        color:red;
+        cursor: pointer;
+    }
+    &__date{
+       color:grey;
+    }
+    &__detail{
+        flex:1;
+    }
+    &__author{
+        font-size: 0.75rem;
+        padding-bottom: 1rem;
+        @include tablet{
+            font-size: 0.95rem;
+        }
+    }
+    &__message{
+        font-size: 0.86rem;
+        line-height: 1.3rem;
+        letter-spacing: 0.002rem;
+      @include tablet{
+        font-size: 1.03rem;
+        letter-spacing: 0.02rem;
+        line-height: 1.75rem;
+      }
+    }
+}

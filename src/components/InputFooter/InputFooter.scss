@@ -15,10 +15,14 @@
 }
 
 .input-footer {
-  max-width: $tablet-breakpoint;
-  padding: $padding-mobile;
   position: sticky;
   bottom: 0;
+  @include flex-row;
+  justify-content: center;
+  &__container {
+    max-width: $tablet-breakpoint;
+    padding: $padding-mobile;
+  }
 }
 
 .comments {
@@ -73,7 +77,11 @@
     font-family: inherit;
     resize: none;
     min-width: 100%;
-    color: silver;
+    color: black;
+    font-weight: 600;
+    &__::placeholder {
+      font-weight: 400;
+    }
     min-height: 2.25rem;
     height: 25vw;
     max-height: 6.25rem;
