@@ -1,0 +1,43 @@
+@use "../../styles//partials/variables" as *;
+@use "../../styles//partials/mixins" as *;
+
+button {
+  padding: 0 1rem;
+  height: 2.25rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  justify-content: center;
+  font-weight: bold;
+
+  @include tablet {
+    height: 2.375rem;
+    width: auto;
+  }
+
+  @include desktop {
+    height: 2.375rem;
+    width: auto;
+  }
+  &.primary {
+    border: 1px solid $Bell-Blue;
+    color: $White;
+    background: $Bell-Blue;
+
+    &:hover {
+      background-color: $Bell-DarkBlue;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $White;
+    color: $Bell-Blue;
+    background: $White;
+
+    &:hover {
+      background-color: $White;
+      border: 1px solid $Bell-DarkBlue;
+      color: $Bell-DarkBlue;
+    }
+  }
+}
