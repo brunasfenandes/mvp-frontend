@@ -23,10 +23,10 @@ function RoomPage() {
       RoomPage
       <section className="chats">
         {roomChats?.map((chat) => (
-          <CommentPost chat={chat} />
+          <CommentPost key={chat.commentId} chat={chat} />
         ))}
       </section>
-      <InputFooter />{" "}
+      <InputFooter roomId={id} />
     </div>
   );
 }

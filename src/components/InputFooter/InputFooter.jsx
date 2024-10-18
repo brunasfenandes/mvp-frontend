@@ -1,25 +1,35 @@
 import "./InputFooter.scss";
 import avatarImg from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/icons/add_comment.svg";
+import isToxic from "../../utils/toxicityCheck";
 
-function InputFooter() {
+function InputFooter({ roomId }) {
   async function handleSubmit(event) {
     event.preventDefault();
-    const mobileInput = event.target.commentMobile.value;
-    const otherInput = event.target.commentOther.value;
-    if (mobileInput.trim() === "" && otherInput.trim() === "") {
-      alert("Please enter the comment!");
-    } else {
-      const userInput = prompt("Please enter your name: ");
+    const name = event.target.name.value.trim();
+    const mobileInput = event.target.commentMobile.value.trim();
+    const otherInput = event.target.commentOther.value.trim();
+    const comment = mobileInput || otherInput;
 
-      if (userInput) {
-        const response = await api.postComment(videoId, {
-          name: userInput,
-          comment: mobileInput === "" ? otherInput : mobileInput,
-        });
-        event.target.reset();
-        setSendingComments((current) => [response, ...current]);
-      }
+    if (name === "") {
+      alert("Please enter your name!");
+      return;
+    }
+
+    if (comment === "") {
+      alert("Please enter a comment!");
+      return;
+    }
+
+    if (!isToxic(comment)) {
+      const response = await axios.post(`http://localhost:8080/room/${roomId}/chat`, {
+        name: name,
+        comment: comment,
+      });
+      event.target.reset();
+      setSendingComments((current) => [response, ...current]);
+    } else {
+      return; //do nothing
     }
   }
   return (

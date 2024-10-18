@@ -7,9 +7,9 @@ import { toast } from 'react-toastify';
  * @param {string} message - The message to evaluate.
  * @returns {Promise<boolean>} - Returns true if the message is toxic, otherwise false.
  */
-async function checkToxicity(message) {
+async function isToxic(message) {
     try {
-        const response = await axios.post('/isMessageToxic', { message });
+        const response = await axios.post(`http://localhost:8080/isMessageToxic`, { message });
         if (response.data.isToxic) {
             toast.error('Your chat message was toxic and could be harmful to others. Please be respectful and kind.');
         }
@@ -21,4 +21,4 @@ async function checkToxicity(message) {
     }
 }
 
-export default checkToxicity;
+export default isToxic;
