@@ -76,11 +76,8 @@
     color: silver;
     min-height: 2.25rem;
     height: 25vw;
+    max-height: 6.25rem;
     padding: 0.5rem;
-
-    @include tablet {
-      height: 3.125rem;
-    }
   }
 
   &__button {

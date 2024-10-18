@@ -45,18 +45,11 @@ function InputFooter() {
               ></input>
               <textarea
                 type="text"
-                className="comments__input input no-tablet"
+                className="comments__input input"
                 id="commentTextArea"
                 name="commentMobile"
                 placeholder="Add a new comment"
               ></textarea>
-              <input
-                type="text"
-                className="comments__input input no-mobile"
-                name="commentOther"
-                id="commentInput"
-                placeholder="Add a new comment"
-              ></input>
             </div>
             <button type="submit" className="comments__button button">
               <img

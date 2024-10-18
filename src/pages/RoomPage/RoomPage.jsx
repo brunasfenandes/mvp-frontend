@@ -1,10 +1,10 @@
-import React from "react";
+import "./RoomPage.scss";
 import InputFooter from "../../components/InputFooter/InputFooter";
 
 function RoomPage() {
   return (
-    <div>
-      RoomPage <InputFooter />{" "}
+    <div className="room-page">
+      RoomPage <InputFooter />
     </div>
   );
 }
