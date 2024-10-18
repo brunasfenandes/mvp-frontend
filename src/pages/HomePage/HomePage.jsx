@@ -3,7 +3,7 @@ import Card from "../../components/Card/Card";
 
 function HomePage() {
   const cardData = [
-    { text: "People with Scrizophrenia", color: "lightsalmon" },
+    { text: "People with Scrizophrenia", color: "#96bbbb" },
     { text: "People with Depression", color: "#f0a7a0" },
     { text: "People with OCD", color: "#f4d35e" },
     { text: "Personality disorders", color: "lightsalmon" },
@@ -12,10 +12,11 @@ function HomePage() {
   ];
 
   return (
-    <div>
-      HOMEPAGE
-      <Card text="HI" backgroundColor="blue" />
+    <div className="main">
+      <h1>CHAT ROOMS</h1>
+      
       <div className="card-list">
+        <Card text="HI" backgroundColor="#007aff" />
         {cardData.map((card) => {
           return <Card text={card.text} backgroundColor={card.color} />;
         })}

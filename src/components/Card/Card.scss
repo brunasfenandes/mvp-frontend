@@ -2,7 +2,25 @@
 @use "../../styles//partials/mixins" as *;
 
 .card {
+  // margin: 20px 0;
   padding: 2rem;
   width: 50%;
   border-radius: 1rem;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  color: $White;
+  font-weight: bold;
+
+  @include tablet {
+    width: 100%;
+    margin: 3vw 0;
+    height: 10rem;
+  }
+
+  @include desktop {
+    width: 100%;
+    margin: 3vw 0;
+    height: 10rem;
+  }
 }
