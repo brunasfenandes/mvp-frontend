@@ -34,7 +34,7 @@ function RoomPage() {
   };
 
   return (
-    <div>
+    <div className="room-page">
       <div className="title">
         <Link to="/">
           <FaArrowLeft />

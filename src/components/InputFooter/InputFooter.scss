@@ -85,21 +85,9 @@
       height: 3rem;
     }
 
-    &__textarea {
-      display: none;
-
-      @include tablet {
-        display: block;
-      }
-    }
-
     &__text {
       display: block;
       max-width: 20rem;
-
-      @include tablet {
-        display: none;
-      }
     }
   }
 
@@ -124,6 +112,7 @@
       color: $White;
       cursor: pointer;
       transition: background-color 0.3s;
+      margin: 1rem;
 
       &:hover {
         background-color: #0056b3; // A darker shade of Bell-Blue
