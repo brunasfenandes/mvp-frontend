@@ -2,9 +2,12 @@
 
 .comment-post{
     display: flex;
-    gap:2rem;
+    gap:4rem;
     padding: 1rem 1rem;
-    border-top: 1px solid rgb(97, 166, 245);
+    background-color: rgb(154, 219, 254);
+    border: 1px solid rgb(97, 166, 245);
+    border-radius: 8px;
+    margin-bottom: 2rem; 
     &__avatar{
         width:2.25rem;
         height:2.25rem;
