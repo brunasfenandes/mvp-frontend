@@ -1,4 +1,4 @@
-@import "../../styles/partials/mixins" ;
+@use "../../styles/partials/mixins" as *;
 
 .comment-post{
     display: flex;

@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
-
 /**
  * Checks if a given message is toxic by making a request to the backend.
  *
@@ -10,13 +8,9 @@ import { toast } from 'react-toastify';
 async function isToxic(message) {
     try {
         const response = await axios.post(`http://localhost:8080/isMessageToxic`, { message });
-        if (response.data.isToxic) {
-            toast.error('Your chat message was toxic and could be harmful to others. Please be respectful and kind.');
-        }
         return response.data.isToxic;
     } catch (error) {
-        console.error('Error checking toxicity:', error);
-        // In case of an error, default to non-toxic
+        //default to non-toxic if there's an error
         return false;
     }
 }

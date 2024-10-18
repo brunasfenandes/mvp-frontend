@@ -13,12 +13,17 @@ function RoomPage() {
 
   useEffect(() => {
     const fetchChat = async () => {
-      const chats = await axios.get(`http://localhost:8080/room/${id}/chat`);
-      setRoomChats(chats.data);
+      try {
+        const chats = await axios.get(`http://localhost:8080/room/${id}/chat`);
+        setRoomChats(chats.data);
+        console.log(chats.data);
+      } catch (error) {
+        console.error("Error fetching chats:", error);
+        setRoomChats([]); // Set to an empty array on error
+      }
     };
-
     fetchChat();
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -28,9 +33,8 @@ function RoomPage() {
         </Link>
         <h2>{roomChats[0]?.roomName}</h2>
       </div>
-      <InputFooter />{" "}
       <section className="chats">
-        {roomChats?.map((chat) => (
+        {roomChats.map((chat) => (
           <CommentPost key={chat.commentId} chat={chat} />
         ))}
       </section>
