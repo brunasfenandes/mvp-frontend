@@ -1,28 +1,50 @@
 import "./HomePage.scss";
 import Card from "../../components/Card/Card";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+const port = import.meta.env.VITE_PORT;
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 function HomePage() {
-  const cardData = [
-    { text: "People with Scrizophrenia", color: "#96bbbb", roomId: 2 },
-    { text: "People with Depression", color: "#f0a7a0", roomId: 3 },
-    { text: "People with OCD", color: "#f4d35e", roomId: 1 },
-    { text: "Personality disorders", color: "lightsalmon", roomId: 4 },
-    { text: "Problem Gambling", color: "#96bbbb", roomId: 6 },
-    { text: "Substance dependency", color: "#f4d35e", roomId: 7 },
+  const [rooms, setRooms] = useState([]);
+
+  const colors = [
+    "#96bbbb",
+    "#f0a7a0",
+    "#f4d35e",
+    "lightsalmon", 
+    "#007aff",
+    "#f4d35e", 
   ];
+
+  const fetchRooms = async () => {
+    try {
+      const { data } = await axios.get(`${backendURL}:${port}/room`);
+      setRooms(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching rooms:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRooms();
+  }, []);
 
   return (
     <div className="main">
       <h1>CHAT ROOMS</h1>
-
+      
       <div className="card-list">
-        {cardData.map((card) => {
+        {rooms.map((room, index) => {
+          const backgroundColor = colors[index % colors.length];
           return (
             <Card
-              key={card.roomId}
-              text={card.text}
-              backgroundColor={card.color}
-              roomId={card.roomId}
+              key={room.roomId}
+              name={room.roomName}
+              backgroundColor={backgroundColor}
+              roomId={room.roomId}
             />
           );
         })}
