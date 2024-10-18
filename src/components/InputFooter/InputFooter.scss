@@ -21,6 +21,14 @@
   @include tablet {
     padding: $padding-tablet;
   }
+  
+  @include flex-row;
+  justify-content: center;
+  &__container {
+    max-width: $tablet-breakpoint;
+    padding: $padding-mobile;
+    padding-bottom: 0;
+  }
 
   @include desktop {
     padding: $padding-desktop;
