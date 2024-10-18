@@ -2,7 +2,7 @@ import React from "react";
 import "./CommentPost.scss";
 import { FaTrashAlt } from "react-icons/fa";
 
-const CommentPost = ({ chat, handleDelete }) => {
+const CommentPost = ({ chat, handleDelete, end }) => {
   return (
     <div>
       <div className="comment-post">
@@ -19,6 +19,8 @@ const CommentPost = ({ chat, handleDelete }) => {
           </div>
           <p className="comment-post__message">{chat.comment}</p>
         </div>
+        {/* Dummy div to scroll to */}
+        <div ref={end} />
       </div>
     </div>
   );
