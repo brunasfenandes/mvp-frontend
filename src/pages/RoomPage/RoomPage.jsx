@@ -11,19 +11,27 @@ function RoomPage() {
   const [roomChats, setRoomChats] = useState([]);
   const { id } = useParams();
 
-  useEffect(() => {
-    const fetchChat = async () => {
-      try {
-        const chats = await axios.get(`http://localhost:8080/room/${id}/chat`);
-        setRoomChats(chats.data);
-        console.log(chats.data);
-      } catch (error) {
-        console.error("Error fetching chats:", error);
-        setRoomChats([]); // Set to an empty array on error
-      }
-    };
+  const fetchChat = async () => {
+    const chats = await axios.get(`http://localhost:8080/room/${id}/chat`);
+    setRoomChats(chats.data);
+  };
+
+  const handleDelete = async (chatId) => {
+    await axios.delete(`http://localhost:8080/room/${id}/chat/${chatId}`);
     fetchChat();
-  }, [id]);
+  };
+
+  useEffect(() => {
+    fetchChat();
+  }, []);
+
+  const postChat = async (body) => {
+    const chat = await axios.post(
+      `http://localhost:8080/room/${id}/chat`,
+      body
+    );
+    setRoomChats([...roomChats, chat.data]);
+  };
 
   return (
     <div>
@@ -34,11 +42,11 @@ function RoomPage() {
         <h2>{roomChats[0]?.roomName}</h2>
       </div>
       <section className="chats">
-        {roomChats.map((chat) => (
-          <CommentPost key={chat.commentId} chat={chat} />
+        {roomChats?.map((chat) => (
+          <CommentPost key={chat.commentId} chat={chat} handleDelete={handleDelete} />
         ))}
       </section>
-      <InputFooter roomId={id} />
+      <InputFooter postFunction={postChat} />
     </div>
   );
 }

@@ -1,7 +1,28 @@
-.room-page {
+@use "../../styles/partials/mixins" as *;
+
+.chats {
+  padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  align-items: initial;
   display: flex;
-  flex-direction: column;
-  height: 100vh; // Full viewport height
+
+  > div {
+    width: 90%;
+
+    @include desktop {
+      width: 80%;
+    }
+
+    @include tablet {
+      width: 80%;
+    }
+  }
+}
 
   .title {
     display: flex;
@@ -9,16 +30,8 @@
     gap: 1rem;
     padding: 1rem;
 
-    a {
-      width: auto;
-      color: black;
-    }
-  }
-
-  .chats {
-    flex: 1; // Take up remaining space
-    overflow-y: auto;
-    padding: 1rem;
-    position: relative;
+  a {
+    width: auto;
+    color: black;
   }
 }

@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import RoomPage from "./pages/RoomPage/RoomPage";
 import { Header } from "./components/Header/Header";
-import ChatPage from "./pages/ChatPage/ChatPage";
 import NotFound from "./pages/NotFoundPage/NotFoundPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,8 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/rooms/:id" element={<RoomPage />} />
-        <Route path="/rooms/:id/chat" element={<ChatPage />} />
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer autoClose={3000} />
     </BrowserRouter>;
