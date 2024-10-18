@@ -25,6 +25,14 @@ function RoomPage() {
     fetchChat();
   }, []);
 
+  const postChat = async (body) => {
+    const chat = await axios.post(
+      `http://localhost:8080/room/${id}/chat`,
+      body
+    );
+    setRoomChats([...roomChats, chat.data]);
+  };
+
   return (
     <div>
       <div className="title">
@@ -33,12 +41,12 @@ function RoomPage() {
         </Link>
         <h2>{roomChats[0]?.roomName}</h2>
       </div>
-      <InputFooter />{" "}
       <section className="chats">
         {roomChats?.map((chat) => (
           <CommentPost chat={chat} handleDelete={handleDelete} />
         ))}
       </section>
+      <InputFooter postFunction={postChat} />{" "}
     </div>
   );
 }
