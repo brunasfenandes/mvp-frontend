@@ -19,6 +19,7 @@ function HomePage() {
         {cardData.map((card) => {
           return (
             <Card
+              key={card.roomId}
               text={card.text}
               backgroundColor={card.color}
               roomId={card.roomId}

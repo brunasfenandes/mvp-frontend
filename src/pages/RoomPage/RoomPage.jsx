@@ -4,6 +4,8 @@ import axios from "axios";
 import CommentPost from "../../components/CommentPost/CommentPost";
 import "./RoomPage.scss";
 import { useParams } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function RoomPage() {
   const [roomChats, setRoomChats] = useState([]);
@@ -20,7 +22,13 @@ function RoomPage() {
 
   return (
     <div>
-      RoomPage
+      <div className="title">
+        <Link to="/">
+          <FaArrowLeft />
+        </Link>
+        <h2>{roomChats[0]?.roomName}</h2>
+      </div>
+      <InputFooter />{" "}
       <section className="chats">
         {roomChats?.map((chat) => (
           <CommentPost key={chat.commentId} chat={chat} />
