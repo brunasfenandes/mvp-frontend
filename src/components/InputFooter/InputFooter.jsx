@@ -36,6 +36,13 @@ function InputFooter() {
           </label>
           <div className="input-button-box">
             <div className="comments__comment">
+              <input
+                type="text"
+                className="input comments__name-input"
+                name="name"
+                id="name"
+                placeholder="Add a name"
+              ></input>
               <textarea
                 type="text"
                 className="comments__input input no-tablet"
