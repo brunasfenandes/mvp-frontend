@@ -1,1 +1,7 @@
 @import "./styles/partials/global";
+
+:root {
+    --toastify-color-error: red;
+    --toastify-icon-color-error: var(--toastify-color-error);
+    --toastify-color-progress-error: var(--toastify-color-error);
+}
