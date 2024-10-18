@@ -21,11 +21,6 @@ function InputFooter({ postFunction }) {
     <div className="input-footer">
       <div className="input-footer__container">
         <div className="comments">
-          <img
-            src={avatarImg}
-            alt="A user's face image"
-            className="comments__avatar-image"
-          />
           <form className="comments__form" onSubmit={handleSubmit}>
             <label htmlFor="comment" className="comments__title">
               Join the Conversation
